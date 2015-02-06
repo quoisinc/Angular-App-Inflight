@@ -1,0 +1,62 @@
+﻿<div ng-controller="ManifestCtrl">
+    <div ng-include src="'partials/common/subTitleView.html'"></div>
+    
+    <div id="manifest">
+        <!--controls extender tmpl-->
+        <div id="controlExpanderViewTmpl">
+            <div id="controlExtender">
+                <div id="controls" class="in">
+                    <ul id="icons">
+                        <li id="reload" class="cursor"><div></div></li>
+                        <li id="sync" class="grayscale"><div></div></li>
+                        <li id="delete" class="grayscale"><div></div></li>
+                        <li id="toggle" class="last cursor"><div></div></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div id="seatDetailsContainer"></div>
+        <div id="seatMapContainer">
+            <div class="seatMapTab">SEATMAP CONTAINER <span class="icons closeArrow"></span></div>
+        </div>
+    </div>
+
+    <!-- passenger list item template -->
+    <div id="passengerListTmplt" data-template-name="passengerList" ng-show="isManifestView()">
+        <div style="display:none">
+            <div class="passengerList_name">
+                
+            </div>
+            <div class="passengerSeat_Num"></div>
+        </div>
+    </div>
+
+    <!-- landscape seatMap container -->
+    <div id="landscapeContainerViewTmpl" style="display: none">
+        <div id="dhx_type_landscape_container">
+            <div class="seatContainer roundedCorner ">
+                <span class="landscape_body_header">{obj.seatNumber}</span>
+                <span>{obj.pax ? {obj.pax.lastName} : }</span>
+            </div>
+        </div>
+    </div>    
+
+    <!-- passenger detail tempalte -->
+    <div class="view" id="passengerDetailTmpl">
+        <section class="passenger_details {common.isEmptySeat()}">
+            <div class="passDetails_titleBar">
+                <div class="passDetails_passTitle"> <span>CUSTOMER PROFILE: </span> {obj.pax.firstName}</div>
+                <div class="passDetails_greetedContainer"><div class="passDetails_greetedText">Greeted</div><div><input type="checkbox" /></div></div>
+            </div>
+
+            <div class="passDetails_connectFlight fltLt">
+                <h4>Connecting flight</h4>
+                <ul>
+                    <li>{obj.paxConnecting()}</li>
+                </ul>
+            </div>
+        </section>
+    </div>
+
+</div>
+

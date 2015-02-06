@@ -1,0 +1,21 @@
+﻿<div id="loginScreenTmplt" ng-controller="LoginCtrl">
+    <div class="view login">
+        <div class="loginContainer">
+            <div class="inner">
+                <div class="mid-title">It's nice to see you again.</div>
+                <form id="true_blue_form" name="true_blue_form" action="" method="post" ng-submit="loginUser(user);">
+                    <div class="loginControlContainer roundedCornerTop">
+                        <input id="userIdField" name="userIdField" ng-model="user.userID" type="text" value="" onfocus="this.placeholder = ''" onblur="    this.placeholder = 'Crewmember ID'" placeholder="Crewmember ID" />
+                    </div>
+                    <div class="loginControlContainer roundedCornerBottom">
+                        <input id="passwordField" name="passwordField" type="password" ng-model="user.password" onfocus="this.placeholder = ''" onblur="    this.placeholder = 'Password'" placeholder="Enter your password" value="" />
+                    </div>
+                    <div class="loginControlContainer roundedCorner">
+
+                    </div>
+                    <div><input type="submit" id="loginBtn" name="loginBtn" value="Sign In" /></div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

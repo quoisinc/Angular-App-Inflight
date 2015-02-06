@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Inflight Service Assistant</title>
+    <script src="lib/angular/angular.min.js"></script>
+    <script src="lib/angular/angular-route.min.js"></script>
+    <script src="lib/angular/angular-animate.min.js"></script>
+    <script src="lib/core/jquery/jquery.js"></script>
+    <script src="lib/core/jquery/jquery.validate.min.js"></script>
+    <script src="lib/plugin/util/crypto-core-min.js"></script>
+    <script src="lib/plugin/util/crypto-enc-base64-min.js"></script>
+    <script src="lib/core/dhtmlx/touchui.js"></script>
+    <script src="lib/plugin/util/jbRPC.js"></script>
+
+    <script src="js/controllers/dhxPassengerList.js"></script>
+    <script src="js/controllers/dhxSeatMap.js"></script>
+    <script src="js/controllers/ifsaMain.js"></script>
+    <script src="js/controllers/ifsaConfig.js"></script>
+    <script src="js/controllers/services.js"></script>
+    <script src="js/controllers/controllers.js"></script>
+    <script src="js/controllers/loginController.js"></script>
+    <script src="js/controllers/portalController.js"></script>
+    <script src="js/controllers/flightSearchController.js"></script>
+    <script src="js/controllers/manifestController.js"></script>
+
+    <link href="lib/core/dhtmlx/touchui.css" rel="stylesheet" />
+    <link href="assets/css/styles.css" rel="stylesheet" />
+    <link href="assets/css/transitions.css" rel="stylesheet" />
+</head>
+<body>
+    <div ng-app="appIFServiceAssistant">
+        <header id="titleBar">
+            <div id="titleCover"></div>
+            <div id="titleArea">
+                <div id="userDetails" class="floatLeft" ng-controller="HeaderUserInfo">
+                    <div ng-show="crewmemberFirstName != ''">
+                        <div class="actionBtn user-pic"><span class="icons user-default"></span></div>
+                        <div class="user-salutation">
+                            <span>Hi, <span class="user-name">{{crewmemberFirstName}}</span></span>
+                            <br>
+                            <span>Have a great flight.</span>
+                        </div>
+                    </div>
+                </div>
+                <div id="title" class="floatLeft">
+                    <img src="assets/img/jetblue-white-reg.png" />
+                </div>
+
+                <div class="alertHolder floatRight">
+                    <div id="alerts" class="actionBtn floatRight">
+                        <span class="icons alert"></span>
+                    </div>
+                    <div id="alertWeather" class="actionBtn floatRight">
+                        <span class="icons weather"></span>
+                    </div>
+                </div>
+            </div>
+
+        </header><!--Ends Header-->
+        <div class="loadingImg">
+            <img src="assets/img/loaderIcon.gif" />
+        </div>
+        <div ng-view class="slide-animation"></div>
+    </div>
+</body>
+</html>

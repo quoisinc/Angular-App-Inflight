@@ -1,0 +1,29 @@
+﻿<div id="flightSearchTmplt" ng-controller="FlightSearchCtrl">
+
+    <div ng-include src="'partials/common/subTitleView.html'"></div>
+
+    <div class="view flight">
+        <form id="flightSearchForm" name="flightSearchForm" action="" method="post" ng-submit="goToManifest();">
+            <div class="mid-title">Flight search.</div>
+            <div class="input-line f-line">
+                <div class="text-prepend">FROM<br /><span class="icons sm-arrow"></span></div>
+                <input class="block textFields" id="origin" name="origin" ng-model="flightSearch.origin" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Airport code'" placeholder="Airport code" type="text" value="" />
+            </div>
+            <div class="input-line f-line">
+                <div class="text-prepend">TO<br /><span class="icons sm-arrow"></span></div>
+                <input class="block textFields" id="destination" name="destination" ng-model="flightSearch.destination" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Airport code'" placeholder="Airport code" type="text" />
+            </div>
+            <div class="f-line">
+                <input class="block textFields" id="flightNumber" name="flightNumber" ng-model="flightSearch.flightNumber" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Flight number'" placeholder="Flight number" type="text" />
+            </div>
+
+            <div class="f-line" id="timePick">
+                <input class="block" id="flightDate" name="flightDate" ng-model="flightSearch.flightDate" type="date" value="" />
+                <span class="icons sm-blue-arrow"></span>
+            </div>
+
+            <input class="block" id="flight_submit" value="Find It" type="submit" />
+
+        </form>
+    </div>
+</div>

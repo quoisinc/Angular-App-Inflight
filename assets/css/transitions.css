@@ -1,0 +1,49 @@
+﻿
+/* Start slide animation*/
+.slide-animation.ng-enter,
+.slide-animation.ng-leave {
+  -webkit-transition: 1s ease-in-out;
+  -moz-transition: 1s ease-in-out;
+  -o-transition: 1s ease-in-out;
+  transition: 1s ease-in-out;
+  position: relative;
+  
+}
+
+.slide-animation.ng-enter {
+    left: 100%;
+}
+
+.backAnimation {
+    left: -100%;
+}
+
+.slide-animation.ng-enter.ng-enter-active {
+    left: 0;    
+}
+
+.slide-animation.ng-leave {
+    left: 0;
+}
+
+.slide-animation.ng-leave.ng-leave-active {
+    left: -100%;
+}
+
+
+/* End slide animation */
+
+/* Start fade animation */
+.reveal-animation.ng-enter {
+ -webkit-transition: 1s linear all; /* Safari/Chrome */
+ -moz-transition: 1s linear all; /* Firefox */
+ -o-transition: 1s linear all; /* Opera */
+ transition: 1s linear all; /* IE10+ and Future Browsers */
+ 
+ opacity: 0;
+}
+ 
+.reveal-animation.ng-enter.ng-enter-active {
+ opacity: 1;
+}
+/* End fade animation */

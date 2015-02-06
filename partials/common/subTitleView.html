@@ -1,0 +1,24 @@
+﻿
+<div id="subTitleArea" class="floatLeft" ng-controller="SubTitleAreaCtrl">
+    <div id="backCont" class="floatLeft">
+        <a href="javascript:void(0)" class="backBtn"><span class="icons backarrow" ng-click="goBack()"></span></a>
+    </div>
+    <div id="subTitle" ng-show="isManifestView()">Flight status: {{flightManifest.manifestResponse.flightInformation != null && flightManifest.manifestResponse.flightInformation.status || 'Not Available'}}</div>
+    <div class="flightData floatLeft" ng-show="isManifestView()">
+        <div>
+            <div class="flight floatLeft">
+                FLIGHT {{flightManifest.manifestResponse.flightNumber}} &bull; {{flightManifest.manifestResponse.origin}}
+                <span class="icons ellipseArrow"></span>
+                {{flightManifest.manifestResponse.destination}}
+            </div>
+            <!--<div class="flightETA floatLeft"></div>-->
+            <div class="flightStatus floatLeft"></div>
+            <div class="aircraftType floatLeft"> &bull; {{flightManifest.manifestResponse.aircraftType}} </div>
+            <div class="flightLoad floatLeft"> &bull; {{flightManifest.manifestResponse.occupiedSeats}}/{{flightManifest.manifestResponse.totalSeats}}</div>
+        </div>
+        <div>
+            <div class="currentDate floatLeft">Last update: </div>
+            <!--<div class="timeStamp floatLeft"></div>-->
+        </div>
+    </div>
+</div>
